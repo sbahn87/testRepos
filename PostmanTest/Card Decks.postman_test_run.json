@@ -1,0 +1,648 @@
+{
+	"id": "6f03590a-7e33-45da-bdef-4ea0b286e042",
+	"name": "Card Decks",
+	"timestamp": "2022-05-12T20:28:31.118Z",
+	"collection_id": "4145216-5b6d6f55-9eeb-4a6b-9cdc-3c1a8904ff3c",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 24,
+	"totalFail": 8,
+	"results": [
+		{
+			"id": "b1405c91-2fa1-4a36-b796-cb86bd6d7d0d",
+			"name": "Shuffle the Cards",
+			"url": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+			"time": 263,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				263
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": false
+				}
+			]
+		},
+		{
+			"id": "7c42ec87-535a-48e5-b7d4-23db16f777f8",
+			"name": "Reshuffle the Cards (all)",
+			"url": "https://deckofcardsapi.com/api/deck/vzd1ygdnhcn6/shuffle/",
+			"time": 146,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Global deck ID matches nbewly created": true,
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Global deck ID matches nbewly created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				146
+			],
+			"allTests": [
+				{
+					"Global deck ID matches nbewly created": true,
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "d5942792-e1a2-4e8c-8f56-b4f772cdd4e1",
+			"name": "Reshuffle the Cards (remaining)",
+			"url": "https://deckofcardsapi.com/api/deck/vzd1ygdnhcn6/shuffle/?remaining=true",
+			"time": 99,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Global deck ID matches nbewly created": true,
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Global deck ID matches nbewly created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				99
+			],
+			"allTests": [
+				{
+					"Global deck ID matches nbewly created": true,
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "fe28deb0-7e30-47aa-9c9a-010583fa2583",
+			"name": "Get New Deck (no Jokers)",
+			"url": "https://deckofcardsapi.com/api/deck/new/",
+			"time": 106,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				106
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "5b3da871-87b3-4834-9ace-bb157c9863a2",
+			"name": "Get New Deck (include Jokers)",
+			"url": "https://deckofcardsapi.com/api/deck/new/?jokers_enabled=true",
+			"time": 119,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				119
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "2fc4ae30-6118-46da-8cd5-fdf696ea9b34",
+			"name": "Partial Deck (specified values)",
+			"url": "https://deckofcardsapi.com/api/deck/new/shuffle/?cards=AS,2S,KS,AD,2D,KD,AC,2C,KC,AH,2H,KH",
+			"time": 112,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				112
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "28d64145-27df-4c72-996b-79f918c69ac9",
+			"name": "Draw Specified Count",
+			"url": "https://deckofcardsapi.com/api/deck/kz9zq6zrya22/draw/?count=4",
+			"time": 100,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				100
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "2252a484-3ae8-4cbf-99ba-c60d7bc065df",
+			"name": "Draw from Bottom",
+			"url": "https://deckofcardsapi.com/api/deck/kz9zq6zrya22/draw/bottom/",
+			"time": 90,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				90
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "8e3309b5-f2b8-4cd6-922d-cee8e1b2f68c",
+			"name": "Drawing from Piles (specified card)",
+			"url": "https://deckofcardsapi.com/api/deck/vzd1ygdnhcn6/pile/testPile/draw/?cards=AS",
+			"time": 128,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Response time is less than 200ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				128
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Response time is less than 200ms": false
+				}
+			]
+		},
+		{
+			"id": "2b45ebd3-14bd-420c-b46c-6ba9d16ec66d",
+			"name": "Random Draw",
+			"url": "https://deckofcardsapi.com/api/deck/kz9zq6zrya22/draw/random/",
+			"time": 81,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 500": false,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				81
+			],
+			"allTests": [
+				{
+					"Status code is 500": false,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "a978f750-be3c-4a29-8f13-9b45fced528d",
+			"name": "Drawing from Piles (specific amount)",
+			"url": "https://deckofcardsapi.com/api/deck/kz9zq6zrya22/pile/testPile/draw/?count=2",
+			"time": 130,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Response time is less than 200ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				130
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Response time is less than 200ms": false
+				}
+			]
+		},
+		{
+			"id": "a51a6c2e-4777-4584-8080-45708699ffc2",
+			"name": "Adding to Pile (single deck)",
+			"url": "https://deckofcardsapi.com/api/deck/kz9zq6zrya22/pile/testPile/add/?cards=AS,2S",
+			"time": 103,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": false,
+				"is an Object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"is an Object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				103
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": false,
+					"is an Object": true
+				}
+			]
+		},
+		{
+			"id": "c0c7de03-0f0c-498b-b201-0d17c101ee66",
+			"name": "Shuffle Piles (single deck)",
+			"url": "https://deckofcardsapi.com/api/deck/kz9zq6zrya22/pile/testPile/shuffle/",
+			"time": 106,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": false,
+				"is an Object": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"is an Object": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				106
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": false,
+					"is an Object": true
+				}
+			]
+		},
+		{
+			"id": "e5a5aaf3-2259-4ca5-bdf0-4c264edaf188",
+			"name": "Listing Cards in Piles (single deck)",
+			"url": "https://deckofcardsapi.com/api/deck/kz9zq6zrya22/pile/testPile/list/",
+			"time": 105,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				105
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": false
+				}
+			]
+		},
+		{
+			"id": "5f1b164b-28ef-4549-b76e-daac67497a04",
+			"name": "Return to Named Pile and Deck",
+			"url": "https://deckofcardsapi.com/api/deck/vzd1ygdnhcn6/pile/testPile/return/",
+			"time": 96,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				96
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e8e88bf4-76be-4a09-a2ac-fb5db161cace",
+			"name": "Return Specified Cards",
+			"url": "https://deckofcardsapi.com/api/deck/vzd1ygdnhcn6/return/?cards=AS,2S",
+			"time": 99,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				99
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "fb6a525d-1cdd-4894-a65e-7290935ff4b7",
+			"name": "Return Specified Cards to Deck and Pile",
+			"url": "https://deckofcardsapi.com/api/deck/vzd1ygdnhcn6/pile/testPile/return/?cards=AS,2S",
+			"time": 93,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				93
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c157bd9b-5c4e-4a7d-bc2e-a844ef2a2abe",
+			"name": "Return All",
+			"url": "https://deckofcardsapi.com/api/deck/vzd1ygdnhcn6/return/",
+			"time": 97,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				97
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2073,
+	"collection": {
+		"requests": [
+			{
+				"id": "b1405c91-2fa1-4a36-b796-cb86bd6d7d0d",
+				"method": "GET"
+			},
+			{
+				"id": "7c42ec87-535a-48e5-b7d4-23db16f777f8",
+				"method": "GET"
+			},
+			{
+				"id": "d5942792-e1a2-4e8c-8f56-b4f772cdd4e1",
+				"method": "GET"
+			},
+			{
+				"id": "fe28deb0-7e30-47aa-9c9a-010583fa2583",
+				"method": "GET"
+			},
+			{
+				"id": "5b3da871-87b3-4834-9ace-bb157c9863a2",
+				"method": "GET"
+			},
+			{
+				"id": "2fc4ae30-6118-46da-8cd5-fdf696ea9b34",
+				"method": "GET"
+			},
+			{
+				"id": "28d64145-27df-4c72-996b-79f918c69ac9",
+				"method": "GET"
+			},
+			{
+				"id": "2252a484-3ae8-4cbf-99ba-c60d7bc065df",
+				"method": "GET"
+			},
+			{
+				"id": "8e3309b5-f2b8-4cd6-922d-cee8e1b2f68c",
+				"method": "POST"
+			},
+			{
+				"id": "2b45ebd3-14bd-420c-b46c-6ba9d16ec66d",
+				"method": "POST"
+			},
+			{
+				"id": "a978f750-be3c-4a29-8f13-9b45fced528d",
+				"method": "POST"
+			},
+			{
+				"id": "a51a6c2e-4777-4584-8080-45708699ffc2",
+				"method": "GET"
+			},
+			{
+				"id": "c0c7de03-0f0c-498b-b201-0d17c101ee66",
+				"method": "GET"
+			},
+			{
+				"id": "e5a5aaf3-2259-4ca5-bdf0-4c264edaf188",
+				"method": "POST"
+			},
+			{
+				"id": "5f1b164b-28ef-4549-b76e-daac67497a04",
+				"method": "POST"
+			},
+			{
+				"id": "e8e88bf4-76be-4a09-a2ac-fb5db161cace",
+				"method": "POST"
+			},
+			{
+				"id": "fb6a525d-1cdd-4894-a65e-7290935ff4b7",
+				"method": "POST"
+			},
+			{
+				"id": "c157bd9b-5c4e-4a7d-bc2e-a844ef2a2abe",
+				"method": "POST"
+			}
+		]
+	}
+}

@@ -1,0 +1,842 @@
+{
+	"info": {
+		"_postman_id": "5b6d6f55-9eeb-4a6b-9cdc-3c1a8904ff3c",
+		"name": "Card Decks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shuffle Cards",
+			"item": [
+				{
+					"name": "Shuffle the Cards",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// save response from the response body\r",
+									"let response = pm.response.json();\r",
+									"\r",
+									"// set global deck_id variable\r",
+									"pm.globals.set(\"deck_id\", response.deck_id);\r",
+									"\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"strictSSL": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"new",
+								"shuffle",
+								""
+							],
+							"query": [
+								{
+									"key": "deck_count",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reshuffle the Cards (all)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Make sure the global variable is being passed and has been updated by the previous request\r",
+									"pm.test(\"Global deck ID matches nbewly created\", function () {\r",
+									"  pm.expect(pm.response.json().deck_id).to.eql(pm.globals.get(\"deck_id\"));\r",
+									"});\r",
+									"\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/shuffle/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{deck_id}}",
+								"shuffle",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reshuffle the Cards (remaining)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Make sure the global variable is being passed and has been updated by the previous request\r",
+									"pm.test(\"Global deck ID matches nbewly created\", function () {\r",
+									"  pm.expect(pm.response.json().deck_id).to.eql(pm.globals.get(\"deck_id\"));\r",
+									"});\r",
+									"\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/shuffle/?remaining=true",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{deck_id}}",
+								"shuffle",
+								""
+							],
+							"query": [
+								{
+									"key": "remaining",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card Decks",
+			"item": [
+				{
+					"name": "Get New Deck (no Jokers)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// save response from the response body\r",
+									"let response = pm.response.json();\r",
+									"\r",
+									"// set global deck_id variable\r",
+									"pm.globals.set(\"new_deck\", response.deck_id);\r",
+									"\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/new/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"new",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get New Deck (include Jokers)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/new/?jokers_enabled=true",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"new",
+								""
+							],
+							"query": [
+								{
+									"key": "jokers_enabled",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partial Deck (specified values)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/new/shuffle/?cards=AS,2S,KS,AD,2D,KD,AC,2C,KC,AH,2H,KH",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"new",
+								"shuffle",
+								""
+							],
+							"query": [
+								{
+									"key": "cards",
+									"value": "AS,2S,KS,AD,2D,KD,AC,2C,KC,AH,2H,KH"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Drawing Cards",
+			"item": [
+				{
+					"name": "Draw Specified Count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{new_deck}}/draw/?count=4",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{new_deck}}",
+								"draw",
+								""
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Draw from Bottom",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// We know these will fail\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{new_deck}}/draw/bottom/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{new_deck}}",
+								"draw",
+								"bottom",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drawing from Piles (specified card)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// We know these will fail\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/pile/{{pile_name}}/draw/?cards=AS",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{deck_id}}",
+								"pile",
+								"{{pile_name}}",
+								"draw",
+								""
+							],
+							"query": [
+								{
+									"key": "cards",
+									"value": "AS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Random Draw",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// We know these will fail\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{new_deck}}/draw/random/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{new_deck}}",
+								"draw",
+								"random",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drawing from Piles (specific amount)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// We know these will fail\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{new_deck}}/pile/{{pile_name}}/draw/?count=2",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{new_deck}}",
+								"pile",
+								"{{pile_name}}",
+								"draw",
+								""
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card Piles",
+			"item": [
+				{
+					"name": "Adding to Pile (single deck)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// We know these will fail\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});\r",
+									"\r",
+									"// save response from the response body\r",
+									"let response = pm.response.json();\r",
+									"\r",
+									"pm.test('is an Object', () => pm.expect(pm.response.json(response.pile)).to.be.an('object').but.not.an('array'))\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{new_deck}}/pile/{{pile_name}}/add/?cards=AS,2S",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{new_deck}}",
+								"pile",
+								"{{pile_name}}",
+								"add",
+								""
+							],
+							"query": [
+								{
+									"key": "cards",
+									"value": "AS,2S"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shuffle Piles (single deck)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// We know these will fail\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});\r",
+									"\r",
+									"// save response from the response body\r",
+									"let response = pm.response.json();\r",
+									"\r",
+									"pm.test('is an Object', () => pm.expect(pm.response.json(response.pile)).to.be.an('object').but.not.an('array'))\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{new_deck}}/pile/{{pile_name}}/shuffle/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{new_deck}}",
+								"pile",
+								"{{pile_name}}",
+								"shuffle",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listing Cards in Piles (single deck)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// We know these will fail\r",
+									"// Check to see that status is 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Tests repsonse time for the given request\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});\r",
+									"\r",
+									"// save response from the response body\r",
+									"let response = pm.response.json();\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{new_deck}}/pile/{{pile_name}}/list/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{new_deck}}",
+								"pile",
+								"{{pile_name}}",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Return Cards to the Deck",
+			"item": [
+				{
+					"name": "Return to Named Pile and Deck",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/pile/{{pile_name}}/return/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{deck_id}}",
+								"pile",
+								"{{pile_name}}",
+								"return",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return Specified Cards",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/return/?cards=AS,2S",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{deck_id}}",
+								"return",
+								""
+							],
+							"query": [
+								{
+									"key": "cards",
+									"value": "AS,2S"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return Specified Cards to Deck and Pile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/pile/{{pile_name}}/return/?cards=AS,2S",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{deck_id}}",
+								"pile",
+								"{{pile_name}}",
+								"return",
+								""
+							],
+							"query": [
+								{
+									"key": "cards",
+									"value": "AS,2S"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return All",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://deckofcardsapi.com/api/deck/{{deck_id}}/return/",
+							"protocol": "https",
+							"host": [
+								"deckofcardsapi",
+								"com"
+							],
+							"path": [
+								"api",
+								"deck",
+								"{{deck_id}}",
+								"return",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
