@@ -1,5 +1,5 @@
 
-------------
+Hello, and thank you for visitng my test repo!
 
 I included both the Cypress and Postman tests on one repo and each is within it's own folder. I'm grateful to have been able to do this project as I was able to learn 
 a few new things about Postman and will use that knowledge moving forward. 
